@@ -1,0 +1,35 @@
+{% extends 'products/index.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+
+ <section class="uza-portfolio-single-area section-padding-80">
+        <div class="container">
+            <div class="row justify-content-between align-items-end">
+                <div class="col-12 col-md-6">
+                    <div class="portfolio-details-text">
+                        <h2>{{products.name}}</h2>
+                <div class="col-12">
+                    <div class="portfolio-thumbnail mt-80">
+                        <img src="/media/{{products.Image}}" alt="">
+                    </div>
+                </div>
+                        <p>{{products.description}}</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+            </div>
+
+
+        </div>
+    </section>
+    <!-- ***** Portfolio Single Area End ***** -->
+
+{% endblock content%}

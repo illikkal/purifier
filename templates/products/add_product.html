@@ -1,0 +1,25 @@
+{% extends 'products/index.html' %}
+{% load staticfiles %}
+<head>
+    <link rel="stylesheet" href='{% static "products/form_style.css"%}'>
+</head>
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br><br>
+
+
+<h4>Add products here</h4>
+
+    <form class="form" method = "post" enctype="multipart/form-data">
+        <div>
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        <button type="submit">Upload</button>
+        </div>
+    </form>
+
+{% endblock %}

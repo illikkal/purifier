@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="uza - Model Agency HTML5 Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Title -->
+    <title>Water Purifier</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href='{% static "products/img/core-img/favicon.ico"%}'>
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href='{% static "products/style.css"%}'>
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="wrapper">
+            <div class="cssload-loader"></div>
+        </div>
+    </div>
+
+    <!-- ***** Top Search Area Start ***** -->
+    <div class="top-search-area">
+        <!-- Search Modal -->
+        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <!-- Close Button -->
+                        <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                        <!-- Form -->
+                        <form action="index.html" method="post">
+                            <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Top Search Area End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <!-- products Header Start -->
+        <div class="products-header-area">
+            <div class="classy-nav-container breakpoint-off">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between" id="uzaNav">
+
+                    <!-- Logo -->
+                    <a class="nav-brand" href="{% url 'index' %}"><h4>Purify</h4></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul id="nav">
+                                <li class="current-item"><a href="{% url 'index' %}">Home</a></li>
+
+                                <li><a href="{% url 'products' %}">Our Products</a></li>
+                                <li><a href="./about.html">About</a></li>
+                                <li><a href="contact">Contact</a></li>
+                                  {% if user.is_authenticated %}
+                             <li>User: {{ user.get_username }}</li>
+                             <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+                           {% else %}
+                             <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+                           {% endif %}
+                            </ul>
+
+                            <!-- Login / Register -->
+
+                        </div>
+                        <!-- Nav End -->
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    {% block content %}
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** Welcome Area Start ***** -->
+    <section class="welcome-area">
+        <div class="welcome-slides owl-carousel">
+
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide">
+                <!-- Background Curve -->
+                <div class="background-curve">
+                    <img src='{% static "products/img/core-img/curve-1.png"%}' alt="">
+                </div>
+
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-text">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms">House <br> of <span>water Purifiers</span></h2>
+                                    <h5 data-animation="fadeInUp" data-delay="400ms">Spreading a healthier world through NUVAC</h5>
+                                    <a href="{% url 'products' %}" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
+                                </div>
+                            </div>
+                            <!-- Welcome Thumbnail -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-thumbnail">
+
+                                    <img src='{% static "products/img/nuvac.jpg"%}' alt="" data-animation="slideInRight" data-delay="400ms">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide">
+                <!-- Background Curve -->
+                <div class="background-curve">
+                    <img src='{% static "products/img/core-img/curve-1.png"%}' alt="">
+                </div>
+
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-text">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms">House <br> of <span>water Purifiers</span></h2>
+                                    <h5 data-animation="fadeInUp" data-delay="400ms">Spreading a healthier world through NUVAC</h5>
+                                    <a href="{% url 'products' %}" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
+                                </div>
+                            </div>
+                            <!-- Welcome Thumbnail -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-thumbnail">
+                                    <img src='{% static "products/img/nuvac.jpg"%}' alt="" data-animation="slideInRight" data-delay="400ms">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Welcome Slide -->
+            <div class="single-welcome-slide">
+                <!-- Background Curve -->
+                <div class="background-curve">
+                    <img src='{% static "products/img/core-img/curve-1.png"%}' alt="">
+                </div>
+
+                <!-- Welcome Content -->
+                <div class="welcome-content h-100">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <!-- Welcome Text -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-text">
+                                    <h2 data-animation="fadeInUp" data-delay="100ms">House <br> of <span>water Purifiers</span></h2>
+                                    <h5 data-animation="fadeInUp" data-delay="400ms">Spreading a healthier world through NUVAC</h5>
+                                    <a href="{% url 'products' %}" class="btn uza-btn btn-2" data-animation="fadeInUp" data-delay="700ms">Start Exploring</a>
+                                </div>
+                            </div>
+                            <!-- Welcome Thumbnail -->
+                            <div class="col-12 col-md-6">
+                                <div class="welcome-thumbnail">
+                                    <img src='{% static "products/img/nuvac.jpg"%}'  alt="test image" data-animation="slideInRight" data-delay="400ms">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- ***** Welcome Area End ***** -->
+
+
+
+
+
+    <!-- ***** Portfolio Area Start ***** -->
+    <section class="uza-portfolio-area section-padding-80">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2>Our Products</h2>
+                        <p>We stay on top of our industry by being experts in yours.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Portfolio Slides -->
+                <div class="portfolio-sildes owl-carousel">
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src='/media/{{products.0.Image}}' alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>{{products.0.name}}</h4>
+                            <p>{{products.0.Description}}</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="{{ products.0.get_absolute_url }}"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src='/media/{{products.1.Image}}' alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>{{products.1.name}}</h4>
+                            <p>{{products.1.Description}}</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="{{ products.1.get_absolute_url }}"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src='/media/{{products.2.Image}}' alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>{{products.2.name}}</h4>
+                            <p>{{products.2.Description}}</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="{{ products.2.get_absolute_url }}"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+                        <!-- Single Portfolio Slide -->
+                    <div class="single-portfolio-slide">
+                        <img src='/media/{{products.3.Image}}' alt="">
+                        <!-- Overlay Effect -->
+                        <div class="overlay-effect">
+                            <h4>{{products.3.name}}</h4>
+                            <p>{{products.3.Description}}</p>
+                        </div>
+                        <!-- View More -->
+                        <div class="view-more-btn">
+                            <a href="{{ products.3.get_absolute_url }}"><i class="arrow_right"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Border -->
+        <div class="container">
+            <div class="border-line"></div>
+        </div>
+
+        <!-- Background Curve -->
+        <div class="portfolio-bg-curve">
+            <img src='{% static "products/img/core-img/curve-3.png"%}' alt="">
+        </div>
+    </section>
+    <!-- ***** Portfolio Area End ***** -->
+                            <div>
+                                <div id="viewall" >
+                                   <a href="{% url 'products' %}" class=" uza-btn btn-2" >View All</a>
+                                </div>
+                            </div>
+    <!-- ***** Services Area Start ***** -->
+    <section class="uza-services-area section-padding-80-0">
+        <div class="container">
+            <div class="row">
+                <!-- Section Heading -->
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2>NEXT-GEN RO PURIFIERS</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <!-- Single Service Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-service-area mb-80">
+                        <!-- Service Icon -->
+                        <div class="service-icon">
+                            <i class="icon_cone_alt"></i>
+                        </div>
+                        <h5>Your benefits: Health and wellbeing</h5>
+                        <ul>Purest drinking water without germs and pollution.
+                            <ul>Healthy supply of drinking water
+                            <ul>Ideally suited for babys/children
+                            <ul>Purest water for families and employees
+                            <ul>Drinking water free of residuals
+                            <ul>Care and protection for decades
+                            <ul>Don't need to buy bottled water anymore </ul>
+                    </div>
+                </div>
+
+                <!-- Single Service Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-service-area mb-80">
+                        <!-- Service Icon -->
+                        <div class="service-icon">
+                            <i class="icon_piechart"></i>
+                        </div>
+                        <h5>Removing pollutions from water</h5>
+                        <ul>Germs, bacteria and viruses (e coli, legionella...)
+                            <ul>Industrial chemicals, nitrates, pesticides
+                            <ul>Pharmaceutical residues, antibiotics, hormones
+                            <ul>Aluminium, Lead, Mercury and other heavy metals
+                            <ul>Chlorine, lime, impurities, contaminations
+                            <ul>radioactive components*</ul>
+                    </div>
+                </div>
+
+                <!-- Single Service Area -->
+                <div class="col-12 col-lg-4">
+                    <div class="single-service-area mb-80">
+                        <!-- Service Icon -->
+                        <div class="service-icon">
+                            <i class="icon_easel"></i>
+                        </div>
+                        <h5>Certified Technology · High-quality pollution-free materials</h5>
+                        <ul>BestWater reverse osmosis filters from one of the leading manufacturers.
+                            <ul>Reliable systems to remove pollutants from the water.
+                                <ul>Equipped with multiple filter stages, high-quality membranes, automatic control and energizing modules.
+                                    <ul>BestWater filter systems produce purest fresh and vital drinking water.</ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ***** Services Area End ***** -->
+
+    <!-- ***** Blog Area Start ***** -->
+    <section class="uza-blog-area">
+        <!-- Background Curve -->
+        <div class="blog-bg-curve">
+            <img src='{% static "products/img/core-img/curve-4.png"%}' alt="">
+        </div>
+
+
+
+ <!-- ***** Contact Us Start ***** -->
+    <section class="section">
+        <div>
+            <div>
+                <!-- ***** Contact Map Start ***** -->
+                <div>
+                    <div id="map">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3913.024175437841!2d75.78701041406312!3d11.259631753169074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba65948b4697a5b%3A0x4eb789600ff9d506!2sEmerald%20Mall%2C%20Mavoor%20Rd%2C%20Arayidathupalam%2C%20Kozhikode%2C%20Kerala%20673004!5e0!3m2!1sen!2sin!4v1569909013044!5m2!1sen!2sin" width="100%" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+                <!-- ***** Contact Map End ***** -->
+
+
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us End ***** -->
+
+
+    {% endblock content %}
+    <!-- ***** Footer Area Start ***** -->
+    <footer class="footer-area section-padding-80-0">
+        <div class="container">
+            <div class="row justify-content-between">
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-sm-6 col-lg-3">
+
+                </div>
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-80">
+                        <!-- Widget Title -->
+                        <h4 class="widget-title">Quick Link</h4>
+
+                        <!-- Nav -->
+                        <nav>
+                            <ul class="our-link">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Forum Registeration</a></li>
+                                <li><a href="#">Forum Sign In</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-80">
+                        <!-- Widget Title -->
+                        <h4 class="widget-title">Resources</h4>
+
+                        <!-- Nav -->
+                        <nav>
+                            <ul class="our-link">
+                                <li><a href="#">Customer Support</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Media &amp; Press</a></li>
+                                <li><a href="#">Our Team</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <!-- Single Footer Widget -->
+                <div class="col-12 col-sm-6 col-lg-3">
+                    <div class="single-footer-widget mb-80">
+                        <!-- Widget Title -->
+                        <h4 class="widget-title">About Us</h4>
+                        <p>Integer vehicula mauris libero, at molestie eros imperdiet sit amet.</p>
+
+                        <!-- Copywrite Text -->
+                        <div class="copywrite-text mb-30">
+                            <p>&copy; Copyright 2018 <a href="#">Colorlib</a>.</p>
+                        </div>
+
+                        <!-- Social Info -->
+
+                    </div>
+                </div>
+
+            </div>
+
+ <div class="row" style="margin-bottom: 30px;">
+                
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </div>
+
+        </div>
+    </footer>
+    <!-- ***** Footer Area End ***** -->
+
+    <!-- ******* All JS Files ******* -->
+    <!-- jQuery js -->
+    <script src='{% static "products/js/jquery.min.js"%}'></script>
+    <!-- Popper js -->
+    <script src='{% static "products/js/popper.min.js"%}'></script>
+    <!-- Bootstrap js -->
+    <script src='{% static "products/js/bootstrap.min.js"%}'></script>
+    <!-- All js -->
+    <script src='{% static "products/js/uza.bundle.js"%}'></script>
+    <!-- Active js -->
+    <script src='{% static "products/js/default-assets/active.js"%}'></script>
+
+</body>
+
+</html>
