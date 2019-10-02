@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = (os.path.join(BASE_DIR,"templates"))
 STATIC_DIR = (os.path.join(BASE_DIR,'static'))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 
@@ -25,7 +26,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '8v5_35h#oq9(@7@7ds^h7tv25t^8ygtg&9kvz%8&b_z281djdy'
-import os
+
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '8v5_35h#oq9(@7@7ds^h7tv25t^8ygtg&9kvz%8&b_z281djdy')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -130,3 +132,6 @@ STATICFILES_DIRS = [STATIC_DIR,]
 LOGIN_REDIRECT_URL = '/admin/products/products/add/'
 LOGOUT_REDIRECT_URL = '/products/index'
 MEDIA_URL='/media/'
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
