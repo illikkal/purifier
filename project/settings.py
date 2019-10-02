@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = (os.path.join(BASE_DIR,"templates"))
 STATIC_DIR = (os.path.join(BASE_DIR,'static'))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 
@@ -31,7 +32,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '8v5_35h#oq9(@7@7ds^h7tv25t^8yg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['murmuring-cove-83376.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -127,7 +128,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [STATIC_DIR,]
 LOGIN_REDIRECT_URL = '/admin/products/products/add/'
 LOGOUT_REDIRECT_URL = '/products/index'
 MEDIA_URL='/media/'
